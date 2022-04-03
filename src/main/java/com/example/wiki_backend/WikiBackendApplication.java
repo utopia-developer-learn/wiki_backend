@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author utopia
  */
-
 @SpringBootApplication
 public class WikiBackendApplication {
 
