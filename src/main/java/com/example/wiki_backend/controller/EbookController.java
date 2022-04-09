@@ -1,7 +1,9 @@
 package com.example.wiki_backend.controller;
 
 import com.example.wiki_backend.entity.EbookEntity;
+import com.example.wiki_backend.req.EbookReq;
 import com.example.wiki_backend.resp.CommonResp;
+import com.example.wiki_backend.resp.EbookResp;
 import com.example.wiki_backend.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +23,10 @@ public class EbookController {
     private EbookService ebookService;
 
     @GetMapping("/list")
-    public CommonResp list(){
-        CommonResp<List<EbookEntity>> resultResp = new CommonResp<>();
+    public CommonResp list(EbookReq req){
+        CommonResp<List<EbookResp>> resultResp = new CommonResp<>();
 
-        List<EbookEntity> list = ebookService.list();
+        List<EbookResp> list = ebookService.list(req);
 
         resultResp.setContent(list);
 
